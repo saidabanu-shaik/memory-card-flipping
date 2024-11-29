@@ -1,0 +1,160 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f3ebeb;
+  margin: 0;
+}
+
+
+.game-container {
+  text-align: center;
+  background: url('https://wallpapers.com/images/hd/powerpoint-background-xsvny30lj4b3t4mb.jpg') no-repeat center center;
+  background-size: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 90%;
+  max-width: 800px;
+  margin: 20px; 
+}
+
+#level{
+  font-weight: 500;
+}
+
+
+
+h1 {
+  font-size: 2.5rem;
+  font-weight:900;
+  margin-bottom: 30px;
+  color: #046791;
+  /* background-color: #f3ebeb; */
+  justify-content: center;
+  /* border: 2px solid black; */
+
+}
+
+.controls {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  
+}
+
+#playAgain{
+  margin-top: 60px;
+}
+
+button, select {
+  padding: 15px;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 5px 0;
+  width: 100%; 
+  max-width: 200px;
+}
+
+button {
+  background-color: #4caf4e;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color:#046791;
+}
+
+.score-board {
+  margin-bottom: 30px;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  justify-content: center;
+}
+
+.card {
+  width: 200px;
+  height: 190px;
+  perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s; /* Duration of flip */
+  transform-style: preserve-3d; /* Keep the 3D effect */
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg); /* Flip the card */
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; 
+  border-radius: 5px;
+}
+
+
+
+.card-front {
+  background-image: url('https://png.pngtree.com/background/20210710/original/pngtree-luxury-black-palm-golden-feather-border-wedding-background-picture-image_991525.jpg'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem; 
+  color: white; 
+  border-radius: 5px;
+   /* Add border radius if needed */
+   border: 2px solid gray;
+}
+
+
+
+.card-back {
+  background-image: url('https://i.pinimg.com/564x/50/99/70/509970034194beab0c4fb9173a3df0d3.jpg'); 
+  background-size: cover;
+  background-position: center; 
+  transform: rotateY(180deg); /* Hide back face initially*/
+  background-size: cover;
+  border-radius: 5px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  button, select { font-size: 1rem; padding: 10px; }
+  .score-board { font-size: 1.2rem; }
+  .grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+  .card { width: 120px; height: 120px; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.5rem; }
+  button, select { font-size: 0.9rem; }
+  .score-board { font-size: 1rem; }
+  .card { width: 100px; height: 100px; }
+}
